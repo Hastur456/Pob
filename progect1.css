@@ -1,0 +1,310 @@
+/* Стилизация основного тела */
+
+body {
+    background-image: url('bleach.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* Popup */
+
+.invisible {
+    visibility: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+.info {
+    margin-left: 40px;
+    position: absolute;
+    top: 10px;
+    left: 35px;
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgb(0, 0, 0, 0.8);
+    z-index: 3;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s linear;
+}
+
+.popup_area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+
+}
+
+.popup:target  {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup_content {
+    background-color: white;
+    position: relative;
+    padding: 30px;
+    background-color: rgb(235, 109, 55);;
+    height: 300px;
+    width: 900px;
+    color: black;
+    border: 5px solid rgb(169, 79, 15);
+    border-radius: 10px;
+}
+
+.popup_close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+}
+
+.popup_title {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.popup_text {
+    line-height: 1.5em;
+    font-size: 20px;
+}
+
+
+
+.info_link {
+
+    text-decoration: none;
+    color: orange;
+    font-size: 30px;
+}
+
+.info_link:hover {
+    color: antiquewhite;
+
+}
+
+/* Шапка */
+
+.intro {
+    min-width: 1000px;
+    position: relative;
+    max-width: 100%;
+    border: 5px solid rgb(169, 79, 15);
+    height: 100px;
+    background-color: rgb(235, 109, 55);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin: 60px 30px 10px 50px;
+    justify-content: space-between;
+}
+
+.intro_logo {
+    color:black;
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+.input {
+    display: flex;
+    align-items: start;
+}
+
+.input_inner {
+    margin-right: 5px;
+    width: 500px;
+    height: 30px;
+    border: 3px solid rgb(169, 79, 15) ;
+    border-radius: 25px;
+    background-color: rgb(235, 109, 55);    
+    color: antiquewhite;
+    font-size: large;
+    transition: border-bottom 0.2s linear ;
+    outline: none;
+}
+
+.input_inner::placeholder {
+    color: antiquewhite;
+    position: absolute;
+    font-size: large;
+    right: auto;
+    bottom: 3px;
+}
+
+.input_inner:focus {
+    border-bottom: 3px solid antiquewhite;
+}
+
+.btn {
+    margin-top: 3px;
+    width: 70px;
+    height: 30px;
+    border: 3px solid rgb(169, 79, 15);
+    background-color: rgb(235, 109, 55);
+    border-radius: 4px;
+    outline: none;
+    color: antiquewhite;
+    box-shadow: 2px 2px 5px black;
+    transition: all .2s linear;
+}
+
+.btn:hover {
+    background-color:  rgb(247, 184, 102);
+    translate: 3px 3px ;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 0;
+}
+
+.btn:active {
+    background-color: antiquewhite;
+    color: rgb(0, 0, 0);
+}
+
+.nav {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 0;
+}
+
+.nav_link {
+    display: inline-block;
+    position: relative;
+    margin: 0px 40px 0 0;
+    vertical-align: top;
+    color: rgb(247, 184, 102);
+    text-decoration: none;
+    transition: color 0.2s linear;
+}
+
+.nav_link:hover {
+    color: antiquewhite;
+    animation-name: nav-animation;
+}
+
+.nav_link:after {
+    content: '';
+    background-color: antiquewhite;
+    width: 100%;
+    height: 3px;
+    opacity: 0;
+    transition: opacity 0.2s linear;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1;
+}
+
+.nav_link:hover::after {
+    opacity: 1;
+    animation-name: nav-animation;
+    animation-play-state: running;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container_inner {
+    width: 1200px;
+    flex-direction: column;
+    display: flex;
+}
+
+.best {
+
+    font-weight: bolder;
+    color: rgb(235, 148, 55);
+    border-radius: 20px;
+}
+
+.anime  {
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title {
+    box-sizing:border-box;
+    box-shadow: 10px 10px 10px black;
+    height: 250px ;
+    width: 350px;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: flex-end;
+    padding-top: 150px;
+    margin: 20px 30px 20px 0;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    color: rgb(241, 169, 60);
+    font-family: 'Trebuchet MS';
+    font-size: 25px;
+    font-weight: bold ;
+    border: 5px solid rgb(169, 79, 15);
+    transition: color 0.2s ease-in, translate .4s linear, box-shadow 0.4s linear;
+
+}
+
+.title:hover {
+
+    color: white;
+    translate: 20px 20px;
+    box-shadow: 0 0 0 black;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 90%;
+    height: 5px;
+    top: 100%;
+    opacity: 0;
+    transition: opacity 0.01s ease-in;
+    box-shadow: 0 0 10px white;
+    border-radius: 100px;
+
+
+}
+
+.title:active::after {
+    opacity: 1;
+}
+
+.title:active {
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+}
+/* Картинки  у serials*/
+
+#blch {
+    background-image: url(../bleach3.jpg);
+}
+#dmc {
+    background-image: url(../dante.jpeg);
+}
+#bers {
+    background-image: url(../berserk.jpg);
+}
+#dhd {
+    background-image: url(../dorohedoro.jpg);
+}
+
